@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Muse — Less swiping. More real dates.</title>
-  <meta name="description" content="Muse is an alumni-first dating network for NYC + Bay Area. Weighted matching, no swipe anxiety, and private trust signals for better real dates."/>
+  <meta name="description" content="Muse is an alumni-first dating network for NYC + Bay Area. Weighted matching, no swipe anxiety, and private trust signals that protect good users."/>
   <style>
     :root{
       --bg:#f6f7fb;
@@ -58,6 +58,7 @@
       color:var(--muted);
       font-size:13px;
     }
+
     .hero{
       background:rgba(255,255,255,.75);
       border:1px solid var(--line);
@@ -67,7 +68,8 @@
       backdrop-filter: blur(10px);
     }
     h1{margin:0 0 6px; font-size:44px; letter-spacing:-.02em;}
-    .sub{margin:0 0 12px; color:var(--muted); font-size:16px; line-height:1.5;}
+    .sub{margin:0 0 12px; color:var(--muted); font-size:16px; line-height:1.55;}
+    .sub b{color:var(--text)}
     .kicker{
       display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px;
     }
@@ -94,6 +96,7 @@
       box-shadow:0 16px 34px rgba(90,94,255,.25);
     }
     .note{margin-top:10px; color:var(--muted); font-size:13px}
+
     .grid{
       display:grid; gap:14px; margin-top:16px;
       grid-template-columns: repeat(12, 1fr);
@@ -107,7 +110,8 @@
       box-shadow: 0 10px 30px rgba(20,20,28,.05);
     }
     .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.5; font-size:13px}
+    .card p{margin:0; color:var(--muted); line-height:1.55; font-size:13px}
+
     .section{
       margin-top:18px;
       background:rgba(255,255,255,.75);
@@ -131,7 +135,8 @@
       padding:16px;
     }
     .box h4{margin:0 0 10px; font-size:14px}
-    ul{margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.55;}
+    ul{margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.6;}
+
     .preview{
       display:grid; gap:14px; grid-template-columns: 1.1fr .9fr;
       align-items:center;
@@ -164,12 +169,14 @@
       margin-top:4px;
       flex:0 0 10px;
     }
+
     .footer{
       margin-top:18px;
       display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
       color:var(--muted); font-size:12px;
       padding:0 4px;
     }
+
     @media (max-width: 860px){
       h1{font-size:36px}
       .card{grid-column: span 12;}
@@ -189,8 +196,7 @@
         <div class="pill">less swipe • more dates</div>
       </div>
       <div class="nav">
-        <a class="pill" href="#how">How</a>
-        <a class="pill" href="#engine">Matching</a>
+        <a class="pill" href="#matching">Matching</a>
         <a class="pill" href="#trust">Trust</a>
         <a class="pill" href="#pilot">Pilot</a>
         <a class="pill" href="#waitlist">Waitlist</a>
@@ -202,64 +208,50 @@
       <p class="sub"><b>Less swiping. More real dates.</b></p>
       <p class="sub">
         Muse is an alumni-first dating network for NYC + the Bay Area.
-        No endless feed — we curate matches using <b>weighted preferences</b> and a <b>mutual fit score</b>.
+        You tell Muse what matters to you. <b>We do the ranking.</b>
+        You get <b>1–3 best-fit matches/day</b> — without swiping, and without “like-back” anxiety.
       </p>
 
       <div class="kicker">
-        <span class="tag"><i></i> No swipe anxiety (no “like-back” stress)</span>
-        <span class="tag"><i></i> Weighted ranking: quality over quantity</span>
-        <span class="tag"><i></i> Private trust signals (no public scores)</span>
+        <span class="tag"><i></i> Weighted preferences + mutual fit</span>
+        <span class="tag"><i></i> No swipe feed, no “like-back” stress</span>
+        <span class="tag"><i></i> Private accountability (no public ratings)</span>
       </div>
 
       <div class="ctaRow">
         <a class="btn primary" href="https://forms.gle/52S9GsuRD9eVHtE88" target="_blank" rel="noopener">Join the waitlist →</a>
-        <a class="btn" href="#how">How it works</a>
+        <a class="btn" href="#pilot">Pilot plan</a>
       </div>
       <div class="note">Early access is limited. We only email for early access + curated event invites. No spam.</div>
 
       <div class="grid" style="margin-top:18px;">
         <div class="card">
-          <h3>1–3 curated matches/day</h3>
-          <p>High signal, low noise. Spend less time browsing and more time meeting.</p>
+          <h3>Curated, ranked matches</h3>
+          <p>Not “most swiped.” Ranked by your weights and mutual fit. Fewer, better matches.</p>
         </div>
         <div class="card">
           <h3>Max 3 active chats</h3>
-          <p>Focus creates follow-through. Less ghosting. More plans.</p>
+          <p>Focus creates follow-through. Less ghosting. Faster plans.</p>
         </div>
         <div class="card">
-          <h3>Events → same-room matching</h3>
-          <p>Community events turn cold starts into warm starts and raise trust immediately.</p>
+          <h3>Events → warm-start matching</h3>
+          <p>Shared context increases trust and makes meeting feel natural.</p>
         </div>
       </div>
     </div>
 
-    <div class="section" id="how">
+    <div class="section" id="matching">
       <div class="sectionTitle">
-        <h2>The Problem</h2>
-        <span>Why swipe apps feel exhausting</span>
-      </div>
-      <div class="box">
-        <p style="margin:0; color:var(--muted); line-height:1.6; font-size:13px;">
-          Most dating apps optimize for <b>screen time</b>: more swipes, more chats, more noise.
-          But people don’t want more messages. They want <b>one good person</b> and a <b>real plan</b>.
-          And swipe culture creates anxiety: you worry if the person you like will like you back.
-          Muse is built for the opposite outcome: <b>fewer matches, higher intent, faster real-life connection.</b>
-        </p>
-      </div>
-    </div>
-
-    <div class="section" id="engine">
-      <div class="sectionTitle">
-        <h2>Matching Engine</h2>
-        <span>Mechanisms, not vibes</span>
+        <h2>Matching</h2>
+        <span>Quality over quantity (宁缺毋滥)</span>
       </div>
 
       <div class="twoCol">
         <div class="box">
-          <h4>Weighted preference matching (宁缺毋滥)</h4>
+          <h4>Weighted preference ranking</h4>
           <ul>
-            <li>You set preference <b>weights</b> (lifestyle, values, education, ambition, attraction, etc.).</li>
-            <li>Muse ranks candidates by a <b>mutual fit score</b> (two-way, not one-way).</li>
+            <li>You set preference <b>weights</b> (values, lifestyle, education, ambition, attraction, etc.).</li>
+            <li>Muse ranks candidates by <b>mutual fit</b> (two-way score, not one-way).</li>
             <li>You receive <b>1–3 best-fit matches/day</b> — no endless feed.</li>
           </ul>
         </div>
@@ -276,25 +268,24 @@
 
     <div class="section" id="trust">
       <div class="sectionTitle">
-        <h2>Trust & Safety</h2>
-        <span>Private accountability (no public ratings)</span>
+        <h2>Trust</h2>
+        <span>Private signals that protect good users</span>
       </div>
 
       <div class="twoCol">
         <div class="box">
-          <h4>10-second reflection loop (private)</h4>
+          <h4>Private reflection (10 seconds)</h4>
           <ul>
-            <li>After a chat/date, users do a <b>quick private check-in</b> (opt-in).</li>
-            <li>Signals improve matching over time — we optimize for <b>match → date conversion</b>.</li>
+            <li>Optional, quick check-in after a chat/date.</li>
+            <li>Improves personalization over time.</li>
           </ul>
         </div>
         <div class="box">
-          <h4>Anonymous feedback to protect good users</h4>
+          <h4>Anonymous experience feedback</h4>
           <ul>
-            <li>Anonymous “experience flags” for rude behavior / no-shows / unsafe conduct.</li>
-            <li>Repeated negative signals → <b>down-ranked and limited</b>.</li>
-            <li>Good behavior → better matches. This creates real social constraints.</li>
-            <li><b>No public score</b>. Signals are private to avoid “score culture.”</li>
+            <li>Anonymous flags for rude behavior, no-shows, or unsafe conduct.</li>
+            <li>Repeated negative signals are <b>down-ranked and limited</b>.</li>
+            <li><b>No public ratings</b> — signals are private to avoid score culture.</li>
           </ul>
         </div>
       </div>
@@ -302,42 +293,42 @@
 
     <div class="section">
       <div class="sectionTitle">
-        <h2>Product Preview</h2>
-        <span>Optional: upload a mock image later</span>
+        <h2>Product preview</h2>
+        <span>Optional image</span>
       </div>
 
       <div class="preview">
         <div class="mock">
-          <!-- If you add a file named muse_montage.png next to index.html, it will show automatically -->
-          <img src="muse_montage.png" alt="Muse product preview" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+          <img src="muse_montage.png" alt="Muse product preview"
+               onerror="this.style.display='none'; this.parentElement.style.display='none';">
         </div>
 
         <div class="mini">
-          <div class="row"><span class="dot2"></span><div><b>Curated daily matches</b><span>High-signal people, not infinite scrolling.</span></div></div>
-          <div class="row"><span class="dot2"></span><div><b>3-chat cap</b><span>Less ghosting, faster meetups.</span></div></div>
-          <div class="row"><span class="dot2"></span><div><b>Event warm-start</b><span>Shared context increases trust and follow-through.</span></div></div>
-          <div class="row"><span class="dot2"></span><div><b>Private trust signals</b><span>Protect good users; reduce bad behavior.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>Tell Muse your weights</b><span>What matters most to you: values, lifestyle, ambition, attraction.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>We rank by mutual fit</b><span>Two-way matching, fewer but better candidates.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>Warm-start events</b><span>Meet with shared context, then match after the room.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>Private accountability</b><span>Protect good users; reduce rude/no-show behavior.</span></div></div>
         </div>
       </div>
     </div>
 
     <div class="section" id="pilot">
       <div class="sectionTitle">
-        <h2>Pilot Plan</h2>
+        <h2>Pilot plan</h2>
         <span>Judge-verifiable in 14 days</span>
       </div>
 
       <div class="twoCol">
         <div class="box">
-          <h4>Week 1–2: build a real cohort</h4>
+          <h4>Week 1–2</h4>
           <ul>
             <li>Launch waitlist for NYC/Bay alumni.</li>
-            <li>Collect preference weights and intent.</li>
+            <li>Collect preference weights + intent.</li>
             <li>Run Micro-event #1 (10–20 people).</li>
           </ul>
         </div>
         <div class="box">
-          <h4>Week 2–3: prove conversion</h4>
+          <h4>Week 2–3</h4>
           <ul>
             <li>Run Micro-event #2 (10–20 people).</li>
             <li>Post-event matching + follow-up.</li>
@@ -350,26 +341,9 @@
       <div class="box" style="margin-top:14px;">
         <h4>Business model</h4>
         <ul>
-          <li><b>Muse+ subscription</b> ($19–39/mo): premium curation, advanced filters, event priority.</li>
-          <li><b>Curated events</b> ($15–65/ticket): small, high-intent meetups for alumni (later partner communities).</li>
+          <li><b>Muse+ subscription</b> ($19–39/mo): premium curation, filters, event priority.</li>
+          <li><b>Curated events</b> ($15–65/ticket): small, high-intent meetups.</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="sectionTitle">
-        <h2>FAQ</h2>
-        <span>Common questions</span>
-      </div>
-      <div class="box">
-        <p style="margin:0 0 8px; font-weight:700;">Is Muse only for CMU?</p>
-        <p style="margin:0 0 14px; color:var(--muted);">CMU is our starting community. We expand to other alumni networks and cities once conversion is proven.</p>
-
-        <p style="margin:0 0 8px; font-weight:700;">Do you show public ratings?</p>
-        <p style="margin:0 0 14px; color:var(--muted);">No. Trust signals are private to protect the community and avoid “score culture.”</p>
-
-        <p style="margin:0 0 8px; font-weight:700;">What are you optimizing for?</p>
-        <p style="margin:0; color:var(--muted);">Match → date conversion. A “good week” is fewer chats and more real plans.</p>
       </div>
     </div>
 
