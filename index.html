@@ -21,7 +21,7 @@
       --shadow2: 0 10px 26px rgba(15,16,32,.10);
       --radius:22px;
 
-      --max: 1040px;
+      --max: 1080px;
     }
 
     *{box-sizing:border-box}
@@ -30,21 +30,20 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(109,94,252,.20), rgba(246,247,251,0) 60%),
+        radial-gradient(1200px 600px at 15% -10%, rgba(109,94,252,.22), rgba(246,247,251,0) 60%),
         radial-gradient(900px 500px at 85% 10%, rgba(34,193,255,.18), rgba(246,247,251,0) 60%),
         var(--bg);
       color: var(--text);
       line-height:1.55;
     }
     a{color:inherit}
-
     .wrap{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:58px 18px;}
     .shell{width:min(var(--max), 100%);display:flex;flex-direction:column;gap:16px;}
 
     .ribbon{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
       padding:10px 14px;border:1px solid var(--line);border-radius:999px;
-      background: rgba(255,255,255,.65);backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.70);backdrop-filter: blur(10px);
       box-shadow: 0 8px 22px rgba(15,16,32,.06);
     }
     .rLeft{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
@@ -52,21 +51,21 @@
       width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;
       font-weight:900;letter-spacing:.4px;color:#fff;
       background: linear-gradient(135deg, var(--brandA), var(--brandB));
-      box-shadow: 0 10px 22px rgba(109,94,252,.20);
+      box-shadow: 0 10px 22px rgba(109,94,252,.22);
     }
     .chip{
       font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);
-      color:var(--muted);background: rgba(255,255,255,.75);white-space:nowrap;
+      color:var(--muted);background: rgba(255,255,255,.78);white-space:nowrap;
     }
     .chip b{color:var(--text)}
     .rRight{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
     .linkMini{
       font-size:12px;color:var(--muted);text-decoration:none;padding:7px 10px;border-radius:999px;border:1px solid transparent;
     }
-    .linkMini:hover{border-color: var(--line);background: rgba(255,255,255,.75);}
+    .linkMini:hover{border-color: var(--line);background: rgba(255,255,255,.78);}
 
     .card{
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.82);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -74,50 +73,50 @@
       overflow:hidden;
     }
 
-    .hero{padding:34px 34px 22px 34px;position:relative;}
+    .hero{padding:34px 34px 18px 34px;position:relative;}
     .hero::before{
       content:"";position:absolute;inset:-40px -40px auto -40px;height:220px;
-      background: radial-gradient(520px 180px at 20% 30%, rgba(109,94,252,.22), rgba(255,255,255,0) 70%),
-                  radial-gradient(520px 180px at 70% 20%, rgba(34,193,255,.18), rgba(255,255,255,0) 70%);
+      background: radial-gradient(560px 190px at 20% 30%, rgba(109,94,252,.22), rgba(255,255,255,0) 70%),
+                  radial-gradient(560px 190px at 70% 20%, rgba(34,193,255,.18), rgba(255,255,255,0) 70%);
       pointer-events:none;
     }
 
     .top{display:flex;gap:22px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;position:relative;z-index:1;}
-    h1{margin:0;font-size:44px;letter-spacing:-1px;}
-    .tagline{margin-top:8px;font-size:18px;color:var(--muted);max-width:720px;}
-    .subtag{margin-top:10px;font-size:14px;color:var(--muted);max-width:720px;}
+    h1{margin:0;font-size:46px;letter-spacing:-1.2px;}
+    .tagline{margin-top:10px;font-size:18px;color:var(--muted);max-width:760px;}
+    .subtag{margin-top:10px;font-size:14px;color:var(--muted);max-width:760px;}
 
-    .kpiRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+    .kpiRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
     .kpi{
-      border:1px solid var(--line);border-radius:999px;padding:8px 10px;background: rgba(255,255,255,.85);
+      border:1px solid var(--line);border-radius:999px;padding:8px 10px;background: rgba(255,255,255,.88);
       font-size:12.5px;color: var(--muted);
     }
     .kpi b{color:var(--text)}
 
-    .cta{display:flex;flex-direction:column;gap:10px;align-items:flex-end;min-width:260px;}
+    .cta{display:flex;flex-direction:column;gap:10px;align-items:flex-end;min-width:280px;}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 16px;border-radius:14px;border:1px solid transparent;
       background: linear-gradient(135deg, var(--brandA), var(--brandB));
-      color:#fff;text-decoration:none;font-weight:750;white-space:nowrap;
-      box-shadow: 0 14px 28px rgba(109,94,252,.18);
+      color:#fff;text-decoration:none;font-weight:780;white-space:nowrap;
+      box-shadow: 0 16px 34px rgba(109,94,252,.20);
       transform: translateY(0);
       transition: transform .10s ease, box-shadow .10s ease, opacity .10s ease;
     }
-    .btn:hover{transform: translateY(-1px);box-shadow: 0 18px 34px rgba(109,94,252,.22);opacity:.98;}
+    .btn:hover{transform: translateY(-1px);box-shadow: 0 20px 40px rgba(109,94,252,.24);opacity:.98;}
     .btnGhost{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 16px;border-radius:14px;border:1px solid var(--line);
-      background: rgba(255,255,255,.82);color: var(--text);
-      text-decoration:none;font-weight:650;white-space:nowrap;
+      background: rgba(255,255,255,.86);color: var(--text);
+      text-decoration:none;font-weight:680;white-space:nowrap;
       box-shadow: 0 10px 20px rgba(15,16,32,.06);
     }
     .btnGhost:hover{background:#fff;}
-    .note{font-size:12.5px;color:var(--muted);text-align:right;max-width:320px;}
+    .note{font-size:12.5px;color:var(--muted);text-align:right;max-width:340px;}
     .divider{height:1px;background: var(--line);margin: 18px 0 0 0;}
 
     .content{padding:22px 34px 34px 34px;}
-    .sectionTitle{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:22px 0 12px 0;}
+    .sectionTitle{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:24px 0 12px 0;}
     .sectionTitle h2{margin:0;font-size:13px;letter-spacing:.18em;text-transform:uppercase;}
     .sectionTitle span{font-size:12.5px;color:var(--muted);}
 
@@ -126,16 +125,16 @@
 
     .pill,.box,.story,.imgWrap{
       border:1px solid var(--line);border-radius: 18px;padding:16px;
-      background: rgba(255,255,255,.92);box-shadow: 0 10px 24px rgba(15,16,32,.06);
+      background: rgba(255,255,255,.94);box-shadow: 0 10px 24px rgba(15,16,32,.06);
     }
     .pill b{display:block;margin-bottom:6px}
     .pill p{margin:0;color:var(--muted); font-size:14.5px}
-    .story{background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.85));}
+    .story{background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));}
     .story p{margin:0;color:var(--muted); font-size:14.5px}
     .story p b{color:var(--text)}
     .quote{
       margin-top:10px;padding:12px 14px;border-left:3px solid rgba(109,94,252,.85);
-      background: rgba(255,255,255,.92);border-radius:14px;border:1px solid var(--line);
+      background: rgba(255,255,255,.94);border-radius:14px;border:1px solid var(--line);
       color:var(--muted);font-size:14px;
     }
 
@@ -148,45 +147,48 @@
     .badgeRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
     .badge{
       display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);
-      border-radius:999px;background: rgba(255,255,255,.85);font-size:12.5px;color:var(--muted);
+      border-radius:999px;background: rgba(255,255,255,.88);font-size:12.5px;color:var(--muted);
     }
     .dot{width:8px;height:8px;border-radius:999px;background: var(--brandA); display:inline-block}
 
     .imgWrap{padding:0; overflow:hidden;}
     .imgWrap img{width:100%;height:auto;display:block;}
 
-    /* Traction snapshot (numbers) */
-    .metricGrid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:12px;
-    }
-    .metric{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 14px;
-      background: rgba(255,255,255,.92);
+    .callout{
+      border:1px solid rgba(109,94,252,.22);
+      background: linear-gradient(180deg, rgba(109,94,252,.08), rgba(255,255,255,.90));
+      border-radius: 18px;
+      padding:16px;
       box-shadow: 0 10px 24px rgba(15,16,32,.06);
     }
-    .metric .label{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-    .metric .value{font-size:26px;font-weight:850;margin-top:6px;letter-spacing:-.5px}
-    .metric .hint{font-size:12.5px;color:var(--muted);margin-top:6px}
+    .callout b{color:var(--text)}
+    .callout p{margin:0;color:var(--muted);font-size:14.5px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
+    .step{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.92);
+      border-radius: 16px;
+      padding:14px;
+      box-shadow: 0 10px 24px rgba(15,16,32,.06);
+    }
+    .step .n{font-weight:900;font-size:12px;letter-spacing:.18em;color:rgba(109,94,252,.95);text-transform:uppercase}
+    .step .t{margin-top:6px;font-weight:800}
+    .step .d{margin-top:6px;color:var(--muted);font-size:13.5px}
 
     footer{margin-top:26px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12.5px;}
 
     @media (max-width: 980px){
-      .metricGrid{grid-template-columns: repeat(2, 1fr);}
+      .steps{grid-template-columns:1fr}
     }
     @media (max-width: 880px){
       .hero{padding:26px 18px 18px 18px;}
       .content{padding:18px 18px 28px 18px;}
-      h1{font-size:36px}
+      h1{font-size:38px}
       .cta{align-items:flex-start; min-width: unset;}
       .note{text-align:left}
       .grid3{grid-template-columns: 1fr}
       .grid2{grid-template-columns: 1fr}
       .two{grid-template-columns: 1fr}
-      .metricGrid{grid-template-columns: 1fr;}
     }
   </style>
 </head>
@@ -204,17 +206,16 @@
         <div class="rRight">
           <a class="linkMini" href="#how">How</a>
           <a class="linkMini" href="#preview">Product</a>
-          <a class="linkMini" href="#traction">Traction</a>
+          <a class="linkMini" href="#pilot">Pilot</a>
           <a class="linkMini" href="#waitlist">Waitlist</a>
         </div>
       </div>
 
       <section class="card">
 
-        <!-- HERO -->
         <div class="hero">
           <div class="top">
-            <div style="max-width:740px">
+            <div style="max-width:760px">
               <h1>Muse</h1>
               <div class="tagline"><b>Less swiping. More real dates.</b></div>
               <div class="tagline">
@@ -228,7 +229,7 @@
               </div>
 
               <div class="subtag">
-                Built for high-intent people who want a real plan, not endless chatting.
+                Built for high-intent people who want a real plan, not infinite chatting.
               </div>
             </div>
 
@@ -248,7 +249,6 @@
 
         <div class="content">
 
-          <!-- PROBLEM -->
           <div class="sectionTitle">
             <h2>The problem</h2>
             <span>Why dating apps feel exhausting</span>
@@ -258,13 +258,12 @@
               Most dating apps optimize for <b>screen time</b>: more swipes, more chats, more noise.
               But people don’t want more messages. They want <b>one good person</b> and a real plan.
             </p>
-            <div class="quote">“I have 200 matches… and zero plans this weekend.”</div>
+            <div class="quote">“I have matches… and zero plans this weekend.”</div>
             <p class="mini">
               Muse is built for the opposite outcome: fewer matches, higher intent, and faster real-life connection.
             </p>
           </div>
 
-          <!-- DIFFERENTIATION -->
           <div class="sectionTitle" style="margin-top:26px;">
             <h2>What makes Muse different</h2>
             <span>Mechanisms, not vibes</span>
@@ -286,15 +285,15 @@
           </div>
 
           <div class="badgeRow">
-            <div class="badge"><span class="dot"></span>Behavior design: reduce churny swiping</div>
-            <div class="badge"><span class="dot"></span>Quality filters: alumni + lifestyle + values</div>
+            <div class="badge"><span class="dot"></span>Private trust signals (no public scores)</div>
+            <div class="badge"><span class="dot"></span>Anonymous post-date feedback (opt-in)</div>
+            <div class="badge"><span class="dot"></span>Quality filters (alumni + lifestyle + values)</div>
             <div class="badge"><span class="dot"></span>Anti-toxicity: protect good users</div>
           </div>
 
-          <!-- HOW -->
           <div class="sectionTitle" id="how">
             <h2>How it works</h2>
-            <span>Simple user flow</span>
+            <span>Simple flow, strong incentives</span>
           </div>
 
           <div class="two">
@@ -305,7 +304,7 @@
                 <li>Get <b>1–3 curated matches</b> per day — no endless feed.</li>
                 <li>Chat with a <b>3-active-chat cap</b> to stay focused.</li>
                 <li>After a chat/date, do a <b>10-second reflection</b> (private).</li>
-                <li>Muse learns your preferences and improves matches over time.</li>
+                <li>Muse learns what “works” and improves matches over time.</li>
               </ol>
               <div class="mini">Designed to optimize for dates, not dopamine.</div>
             </div>
@@ -316,28 +315,22 @@
                 <li><b>Private trust signals</b>, not public rankings.</li>
                 <li><b>Anonymous feedback</b> after interactions (opt-in).</li>
                 <li><b>No “score culture”</b>: we never show public ratings.</li>
-                <li><b>Quiet protection</b>: repeated no-shows and bad behavior get down-ranked.</li>
+                <li><b>Quiet protection</b>: no-shows and bad behavior get down-ranked.</li>
               </ul>
               <div class="mini">Goal: a calm, high-quality community — especially in alumni networks.</div>
             </div>
           </div>
 
-          <!-- PRODUCT -->
           <div class="sectionTitle" id="preview">
             <h2>Product preview</h2>
-            <span>Upload muse_montage.png to show</span>
+            <span>Optional: upload muse_montage.png</span>
           </div>
 
           <div class="imgWrap">
             <img src="muse_montage.png" alt="Muse product preview"
                  onerror="this.style.display='none'; this.parentElement.style.display='none';" />
           </div>
-          <div class="mini">
-            If you don’t have the image yet, this section will hide automatically.
-            Make one quickly in Canva/PPT and upload it as <b>muse_montage.png</b> (same folder as index.html).
-          </div>
 
-          <!-- MARKET / GTM -->
           <div class="sectionTitle">
             <h2>Market & go-to-market</h2>
             <span>Start narrow, scale city by city</span>
@@ -348,7 +341,7 @@
               <b>Wedge: alumni density</b>
               <p>
                 NYC + Bay Area have high concentration of alumni communities and high dating intent.
-                Muse starts with warm networks, then expands to additional schools and cities.
+                Muse starts with warm networks, then expands city by city.
               </p>
             </div>
             <div class="pill">
@@ -362,11 +355,10 @@
 
           <div class="badgeRow">
             <div class="badge"><span class="dot"></span><b>Acquisition:</b>&nbsp;alumni groups + event partners</div>
-            <div class="badge"><span class="dot"></span><b>Activation:</b>&nbsp;first chat in 24h</div>
+            <div class="badge"><span class="dot"></span><b>Activation:</b>&nbsp;first chat within 24h</div>
             <div class="badge"><span class="dot"></span><b>Outcome:</b>&nbsp;date scheduled within 7 days</div>
           </div>
 
-          <!-- BUSINESS MODEL -->
           <div class="sectionTitle">
             <h2>Business model</h2>
             <span>Aligned incentives</span>
@@ -383,47 +375,63 @@
             </div>
           </div>
 
-          <!-- TRACTION (EDIT THESE) -->
-          <div class="sectionTitle" id="traction">
-            <h2>Traction snapshot</h2>
-            <span>Real-time, update anytime</span>
+          <div class="sectionTitle" id="pilot">
+            <h2>Pilot plan + evidence</h2>
+            <span>What judges can verify (no fake numbers)</span>
           </div>
 
-          <!--
-            ======= EDIT THESE NUMBERS (REAL ONLY) =======
-            Replace the values below with what you ACTUALLY have today.
-            Suggested minimum tonight: post on LinkedIn + IG story + 1 alumni group → aim for 5+ signups.
-          -->
-          <div class="metricGrid">
-            <div class="metric">
-              <div class="label">Waitlist signups</div>
-              <div class="value">0</div>
-              <div class="hint">Source: Google Form</div>
+          <div class="callout">
+            <p>
+              <b>Instead of vanity metrics</b>, Muse focuses on one outcome: <b>match → date conversion</b>.
+              Our pilot is designed so judges can quickly verify demand with real artifacts:
+              waitlist entries, event RSVPs, and post-event matching outcomes.
+            </p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="n">Milestone 1</div>
+                <div class="t">Waitlist + intent tags</div>
+                <div class="d">Collect alumni city + intent (NYC/Bay) and preferred event types.</div>
+              </div>
+              <div class="step">
+                <div class="n">Milestone 2</div>
+                <div class="t">Two micro-events</div>
+                <div class="d">Small, curated meetups (10–20 people) with warm community hosts.</div>
+              </div>
+              <div class="step">
+                <div class="n">Milestone 3</div>
+                <div class="t">Post-event matching</div>
+                <div class="d">Same-room context → follow-up matches → measure date scheduling within 7 days.</div>
+              </div>
             </div>
-            <div class="metric">
-              <div class="label">Link clicks</div>
-              <div class="value">0</div>
-              <div class="hint">From social posts</div>
-            </div>
-            <div class="metric">
-              <div class="label">Pilot partners</div>
-              <div class="value">0</div>
-              <div class="hint">Alumni group / venue intros</div>
-            </div>
-            <div class="metric">
-              <div class="label">Events planned</div>
-              <div class="value">0</div>
-              <div class="hint">Next 14 days</div>
+
+            <div class="mini">
+              <b>Evidence we can share:</b> screenshots of waitlist responses (redacted),
+              event RSVP lists (redacted), and a simple funnel summary:
+              RSVPs → attendance → matches → dates scheduled.
             </div>
           </div>
 
-          <div class="mini">
-            <b>How we validate (next 14 days):</b> run 2 micro-events → post-event matching →
-            measure show-up rate, no-show rate, and <b>date scheduled within 7 days</b>.
-            (We can share screenshots of form responses and event RSVPs.)
+          <div class="sectionTitle">
+            <h2>Who Muse is for</h2>
+            <span>High-intent users (not casual swiping)</span>
           </div>
 
-          <!-- FAQ -->
+          <div class="grid3">
+            <div class="pill">
+              <b>The “busy but serious”</b>
+              <p>Wants fewer chats, better fit, and faster real-life meetups.</p>
+            </div>
+            <div class="pill">
+              <b>The “community member”</b>
+              <p>Feels safer and more authentic when there’s shared context.</p>
+            </div>
+            <div class="pill">
+              <b>The “quality-first”</b>
+              <p>Prefers thoughtful filters and private trust signals over public ratings.</p>
+            </div>
+          </div>
+
           <div class="sectionTitle">
             <h2>FAQ</h2>
             <span>Common questions</span>
@@ -442,14 +450,13 @@
             </p>
           </div>
 
-          <!-- FINAL CTA -->
           <div class="sectionTitle" style="margin-top:26px;">
             <h2>Ready to try Muse?</h2>
             <span>Join early access</span>
           </div>
 
           <div class="top" style="margin-top:8px;">
-            <div style="max-width:720px">
+            <div style="max-width:760px">
               <div class="tagline">
                 We’re building a calmer, higher-trust dating culture: less noise, more real dates.
               </div>
