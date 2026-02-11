@@ -2,482 +2,392 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Muse — Less swiping. More real dates.</title>
-  <meta name="description" content="Muse is an alumni-first dating network for NYC + Bay Area — curated matches, focused chats, and community events." />
-
+  <meta name="description" content="Muse is an alumni-first dating network for NYC + Bay Area. Weighted matching, no swipe anxiety, and private trust signals for better real dates."/>
   <style>
     :root{
-      --brandA:#6d5efc;
-      --brandB:#22c1ff;
-
       --bg:#f6f7fb;
       --card:#ffffff;
-      --text:#0f1020;
-      --muted:#5a5e76;
-      --line:rgba(16,18,32,.10);
-
-      --shadow: 0 22px 60px rgba(15,16,32,.10);
-      --shadow2: 0 10px 26px rgba(15,16,32,.10);
-      --radius:22px;
-
-      --max: 1080px;
+      --text:#14141c;
+      --muted:#5b5f73;
+      --line:#e7e9f2;
+      --accent:#5a5eff;
+      --accent2:#a78bfa;
+      --shadow: 0 18px 55px rgba(20,20,28,.08);
+      --radius: 18px;
+      --radius2: 26px;
     }
-
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
       background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(109,94,252,.22), rgba(246,247,251,0) 60%),
-        radial-gradient(900px 500px at 85% 10%, rgba(34,193,255,.18), rgba(246,247,251,0) 60%),
+        radial-gradient(900px 420px at 20% 0%, rgba(90,94,255,.18), transparent 60%),
+        radial-gradient(900px 420px at 80% 10%, rgba(167,139,250,.18), transparent 60%),
         var(--bg);
-      color: var(--text);
-      line-height:1.55;
     }
-    a{color:inherit}
-    .wrap{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:58px 18px;}
-    .shell{width:min(var(--max), 100%);display:flex;flex-direction:column;gap:16px;}
-
-    .ribbon{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:10px 14px;border:1px solid var(--line);border-radius:999px;
-      background: rgba(255,255,255,.70);backdrop-filter: blur(10px);
-      box-shadow: 0 8px 22px rgba(15,16,32,.06);
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1040px; margin:0 auto; padding:28px 18px 70px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; margin-bottom:18px;
     }
-    .rLeft{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-    .logo{
-      width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-      font-weight:900;letter-spacing:.4px;color:#fff;
-      background: linear-gradient(135deg, var(--brandA), var(--brandB));
-      box-shadow: 0 10px 22px rgba(109,94,252,.22);
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      padding:8px 10px; border:1px solid var(--line); background:rgba(255,255,255,.7);
+      border-radius:999px;
+      backdrop-filter: blur(8px);
     }
-    .chip{
-      font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);
-      color:var(--muted);background: rgba(255,255,255,.78);white-space:nowrap;
+    .dot{
+      width:28px; height:28px; border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:grid; place-items:center; color:#fff; font-weight:800;
+      box-shadow:0 10px 25px rgba(90,94,255,.28);
+      font-size:14px;
     }
-    .chip b{color:var(--text)}
-    .rRight{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
-    .linkMini{
-      font-size:12px;color:var(--muted);text-decoration:none;padding:7px 10px;border-radius:999px;border:1px solid transparent;
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
     }
-    .linkMini:hover{border-color: var(--line);background: rgba(255,255,255,.78);}
-
-    .card{
-      background: rgba(255,255,255,.82);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+    .pill{
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .hero{
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
+      padding:28px;
       backdrop-filter: blur(10px);
+    }
+    h1{margin:0 0 6px; font-size:44px; letter-spacing:-.02em;}
+    .sub{margin:0 0 12px; color:var(--muted); font-size:16px; line-height:1.5;}
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      background:#fff; border:1px solid var(--line);
+      color:#2f3350; font-size:13px;
+    }
+    .tag i{
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display:inline-block;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:10px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px; border:1px solid var(--line);
+      background:#fff; font-weight:700; font-size:14px;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#fff; border:0;
+      box-shadow:0 16px 34px rgba(90,94,255,.25);
+    }
+    .note{margin-top:10px; color:var(--muted); font-size:13px}
+    .grid{
+      display:grid; gap:14px; margin-top:16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 4;
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 10px 30px rgba(20,20,28,.05);
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.5; font-size:13px}
+    .section{
+      margin-top:18px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding:22px;
+      backdrop-filter: blur(10px);
+    }
+    .sectionTitle{
+      display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+      margin-bottom:12px;
+    }
+    .sectionTitle h2{margin:0; font-size:14px; letter-spacing:.16em; text-transform:uppercase; color:#2b2f48;}
+    .sectionTitle span{color:var(--muted); font-size:13px;}
+    .twoCol{display:grid; gap:14px; grid-template-columns: 1fr 1fr;}
+    .box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .box h4{margin:0 0 10px; font-size:14px}
+    ul{margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.55;}
+    .preview{
+      display:grid; gap:14px; grid-template-columns: 1.1fr .9fr;
+      align-items:center;
+      background: radial-gradient(800px 260px at 20% 20%, rgba(90,94,255,.14), transparent 60%),
+                  radial-gradient(800px 260px at 80% 20%, rgba(167,139,250,.14), transparent 60%),
+                  #fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:18px;
+    }
+    .mock{
+      width:100%; border-radius:18px; border:1px solid var(--line);
+      box-shadow:0 16px 44px rgba(20,20,28,.10);
+      background:#fafbff;
       overflow:hidden;
     }
-
-    .hero{padding:34px 34px 18px 34px;position:relative;}
-    .hero::before{
-      content:"";position:absolute;inset:-40px -40px auto -40px;height:220px;
-      background: radial-gradient(560px 190px at 20% 30%, rgba(109,94,252,.22), rgba(255,255,255,0) 70%),
-                  radial-gradient(560px 190px at 70% 20%, rgba(34,193,255,.18), rgba(255,255,255,0) 70%);
-      pointer-events:none;
+    .mock img{display:block; width:100%; height:auto;}
+    .mini{
+      display:grid; gap:10px;
     }
-
-    .top{display:flex;gap:22px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;position:relative;z-index:1;}
-    h1{margin:0;font-size:46px;letter-spacing:-1.2px;}
-    .tagline{margin-top:10px;font-size:18px;color:var(--muted);max-width:760px;}
-    .subtag{margin-top:10px;font-size:14px;color:var(--muted);max-width:760px;}
-
-    .kpiRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
-    .kpi{
-      border:1px solid var(--line);border-radius:999px;padding:8px 10px;background: rgba(255,255,255,.88);
-      font-size:12.5px;color: var(--muted);
+    .mini .row{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px; border-radius:14px; border:1px solid var(--line); background:#fff;
     }
-    .kpi b{color:var(--text)}
-
-    .cta{display:flex;flex-direction:column;gap:10px;align-items:flex-end;min-width:280px;}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 16px;border-radius:14px;border:1px solid transparent;
-      background: linear-gradient(135deg, var(--brandA), var(--brandB));
-      color:#fff;text-decoration:none;font-weight:780;white-space:nowrap;
-      box-shadow: 0 16px 34px rgba(109,94,252,.20);
-      transform: translateY(0);
-      transition: transform .10s ease, box-shadow .10s ease, opacity .10s ease;
+    .mini .row b{display:block; font-size:13px}
+    .mini .row span{display:block; color:var(--muted); font-size:12px; margin-top:2px; line-height:1.4}
+    .mini .dot2{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      margin-top:4px;
+      flex:0 0 10px;
     }
-    .btn:hover{transform: translateY(-1px);box-shadow: 0 20px 40px rgba(109,94,252,.24);opacity:.98;}
-    .btnGhost{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 16px;border-radius:14px;border:1px solid var(--line);
-      background: rgba(255,255,255,.86);color: var(--text);
-      text-decoration:none;font-weight:680;white-space:nowrap;
-      box-shadow: 0 10px 20px rgba(15,16,32,.06);
+    .footer{
+      margin-top:18px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color:var(--muted); font-size:12px;
+      padding:0 4px;
     }
-    .btnGhost:hover{background:#fff;}
-    .note{font-size:12.5px;color:var(--muted);text-align:right;max-width:340px;}
-    .divider{height:1px;background: var(--line);margin: 18px 0 0 0;}
-
-    .content{padding:22px 34px 34px 34px;}
-    .sectionTitle{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:24px 0 12px 0;}
-    .sectionTitle h2{margin:0;font-size:13px;letter-spacing:.18em;text-transform:uppercase;}
-    .sectionTitle span{font-size:12.5px;color:var(--muted);}
-
-    .grid3{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px;}
-    .grid2{display:grid;grid-template-columns: repeat(2, 1fr);gap:14px;}
-
-    .pill,.box,.story,.imgWrap{
-      border:1px solid var(--line);border-radius: 18px;padding:16px;
-      background: rgba(255,255,255,.94);box-shadow: 0 10px 24px rgba(15,16,32,.06);
-    }
-    .pill b{display:block;margin-bottom:6px}
-    .pill p{margin:0;color:var(--muted); font-size:14.5px}
-    .story{background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));}
-    .story p{margin:0;color:var(--muted); font-size:14.5px}
-    .story p b{color:var(--text)}
-    .quote{
-      margin-top:10px;padding:12px 14px;border-left:3px solid rgba(109,94,252,.85);
-      background: rgba(255,255,255,.94);border-radius:14px;border:1px solid var(--line);
-      color:var(--muted);font-size:14px;
-    }
-
-    .two{display:grid;grid-template-columns: 1.1fr .9fr;gap:14px;margin-top: 8px;}
-    .box h3{margin:0 0 10px 0;font-size:13px;letter-spacing:.18em;text-transform:uppercase;}
-    ol, ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px;}
-    .tight li{margin:6px 0}
-    .mini{font-size:12.5px;color:var(--muted);margin-top:10px;}
-
-    .badgeRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);
-      border-radius:999px;background: rgba(255,255,255,.88);font-size:12.5px;color:var(--muted);
-    }
-    .dot{width:8px;height:8px;border-radius:999px;background: var(--brandA); display:inline-block}
-
-    .imgWrap{padding:0; overflow:hidden;}
-    .imgWrap img{width:100%;height:auto;display:block;}
-
-    .callout{
-      border:1px solid rgba(109,94,252,.22);
-      background: linear-gradient(180deg, rgba(109,94,252,.08), rgba(255,255,255,.90));
-      border-radius: 18px;
-      padding:16px;
-      box-shadow: 0 10px 24px rgba(15,16,32,.06);
-    }
-    .callout b{color:var(--text)}
-    .callout p{margin:0;color:var(--muted);font-size:14.5px}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;}
-    .step{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.92);
-      border-radius: 16px;
-      padding:14px;
-      box-shadow: 0 10px 24px rgba(15,16,32,.06);
-    }
-    .step .n{font-weight:900;font-size:12px;letter-spacing:.18em;color:rgba(109,94,252,.95);text-transform:uppercase}
-    .step .t{margin-top:6px;font-weight:800}
-    .step .d{margin-top:6px;color:var(--muted);font-size:13.5px}
-
-    footer{margin-top:26px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:12.5px;}
-
-    @media (max-width: 980px){
-      .steps{grid-template-columns:1fr}
-    }
-    @media (max-width: 880px){
-      .hero{padding:26px 18px 18px 18px;}
-      .content{padding:18px 18px 28px 18px;}
-      h1{font-size:38px}
-      .cta{align-items:flex-start; min-width: unset;}
-      .note{text-align:left}
-      .grid3{grid-template-columns: 1fr}
-      .grid2{grid-template-columns: 1fr}
-      .two{grid-template-columns: 1fr}
+    @media (max-width: 860px){
+      h1{font-size:36px}
+      .card{grid-column: span 12;}
+      .twoCol{grid-template-columns:1fr;}
+      .preview{grid-template-columns:1fr;}
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <div class="shell">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="dot">M</div>
+        <div style="font-weight:700; font-size:13px; color:#2b2f48;">Muse</div>
+        <div class="pill">NYC + Bay Area • alumni-first</div>
+        <div class="pill">less swipe • more dates</div>
+      </div>
+      <div class="nav">
+        <a class="pill" href="#how">How</a>
+        <a class="pill" href="#engine">Matching</a>
+        <a class="pill" href="#trust">Trust</a>
+        <a class="pill" href="#pilot">Pilot</a>
+        <a class="pill" href="#waitlist">Waitlist</a>
+      </div>
+    </div>
 
-      <div class="ribbon">
-        <div class="rLeft">
-          <div class="logo">M</div>
-          <div class="chip"><b>NYC + Bay Area</b> • alumni-first</div>
-          <div class="chip">less swipe • more dates</div>
+    <div class="hero" id="waitlist">
+      <h1>Muse</h1>
+      <p class="sub"><b>Less swiping. More real dates.</b></p>
+      <p class="sub">
+        Muse is an alumni-first dating network for NYC + the Bay Area.
+        No endless feed — we curate matches using <b>weighted preferences</b> and a <b>mutual fit score</b>.
+      </p>
+
+      <div class="kicker">
+        <span class="tag"><i></i> No swipe anxiety (no “like-back” stress)</span>
+        <span class="tag"><i></i> Weighted ranking: quality over quantity</span>
+        <span class="tag"><i></i> Private trust signals (no public scores)</span>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="https://forms.gle/52S9GsuRD9eVHtE88" target="_blank" rel="noopener">Join the waitlist →</a>
+        <a class="btn" href="#how">How it works</a>
+      </div>
+      <div class="note">Early access is limited. We only email for early access + curated event invites. No spam.</div>
+
+      <div class="grid" style="margin-top:18px;">
+        <div class="card">
+          <h3>1–3 curated matches/day</h3>
+          <p>High signal, low noise. Spend less time browsing and more time meeting.</p>
         </div>
-        <div class="rRight">
-          <a class="linkMini" href="#how">How</a>
-          <a class="linkMini" href="#preview">Product</a>
-          <a class="linkMini" href="#pilot">Pilot</a>
-          <a class="linkMini" href="#waitlist">Waitlist</a>
+        <div class="card">
+          <h3>Max 3 active chats</h3>
+          <p>Focus creates follow-through. Less ghosting. More plans.</p>
+        </div>
+        <div class="card">
+          <h3>Events → same-room matching</h3>
+          <p>Community events turn cold starts into warm starts and raise trust immediately.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="how">
+      <div class="sectionTitle">
+        <h2>The Problem</h2>
+        <span>Why swipe apps feel exhausting</span>
+      </div>
+      <div class="box">
+        <p style="margin:0; color:var(--muted); line-height:1.6; font-size:13px;">
+          Most dating apps optimize for <b>screen time</b>: more swipes, more chats, more noise.
+          But people don’t want more messages. They want <b>one good person</b> and a <b>real plan</b>.
+          And swipe culture creates anxiety: you worry if the person you like will like you back.
+          Muse is built for the opposite outcome: <b>fewer matches, higher intent, faster real-life connection.</b>
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="engine">
+      <div class="sectionTitle">
+        <h2>Matching Engine</h2>
+        <span>Mechanisms, not vibes</span>
+      </div>
+
+      <div class="twoCol">
+        <div class="box">
+          <h4>Weighted preference matching (宁缺毋滥)</h4>
+          <ul>
+            <li>You set preference <b>weights</b> (lifestyle, values, education, ambition, attraction, etc.).</li>
+            <li>Muse ranks candidates by a <b>mutual fit score</b> (two-way, not one-way).</li>
+            <li>You receive <b>1–3 best-fit matches/day</b> — no endless feed.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>No swipe anxiety</h4>
+          <ul>
+            <li>No left/right swiping loop.</li>
+            <li>No waiting for a “like back” just to start talking.</li>
+            <li>Less guessing → more confidence → more real dates.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="trust">
+      <div class="sectionTitle">
+        <h2>Trust & Safety</h2>
+        <span>Private accountability (no public ratings)</span>
+      </div>
+
+      <div class="twoCol">
+        <div class="box">
+          <h4>10-second reflection loop (private)</h4>
+          <ul>
+            <li>After a chat/date, users do a <b>quick private check-in</b> (opt-in).</li>
+            <li>Signals improve matching over time — we optimize for <b>match → date conversion</b>.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Anonymous feedback to protect good users</h4>
+          <ul>
+            <li>Anonymous “experience flags” for rude behavior / no-shows / unsafe conduct.</li>
+            <li>Repeated negative signals → <b>down-ranked and limited</b>.</li>
+            <li>Good behavior → better matches. This creates real social constraints.</li>
+            <li><b>No public score</b>. Signals are private to avoid “score culture.”</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">
+        <h2>Product Preview</h2>
+        <span>Optional: upload a mock image later</span>
+      </div>
+
+      <div class="preview">
+        <div class="mock">
+          <!-- If you add a file named muse_montage.png next to index.html, it will show automatically -->
+          <img src="muse_montage.png" alt="Muse product preview" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+        </div>
+
+        <div class="mini">
+          <div class="row"><span class="dot2"></span><div><b>Curated daily matches</b><span>High-signal people, not infinite scrolling.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>3-chat cap</b><span>Less ghosting, faster meetups.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>Event warm-start</b><span>Shared context increases trust and follow-through.</span></div></div>
+          <div class="row"><span class="dot2"></span><div><b>Private trust signals</b><span>Protect good users; reduce bad behavior.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="pilot">
+      <div class="sectionTitle">
+        <h2>Pilot Plan</h2>
+        <span>Judge-verifiable in 14 days</span>
+      </div>
+
+      <div class="twoCol">
+        <div class="box">
+          <h4>Week 1–2: build a real cohort</h4>
+          <ul>
+            <li>Launch waitlist for NYC/Bay alumni.</li>
+            <li>Collect preference weights and intent.</li>
+            <li>Run Micro-event #1 (10–20 people).</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Week 2–3: prove conversion</h4>
+          <ul>
+            <li>Run Micro-event #2 (10–20 people).</li>
+            <li>Post-event matching + follow-up.</li>
+            <li>Measure: <b>date scheduled within 7 days</b>.</li>
+            <li>Share redacted screenshots of waitlist + RSVPs + outcomes.</li>
+          </ul>
         </div>
       </div>
 
-      <section class="card">
-
-        <div class="hero">
-          <div class="top">
-            <div style="max-width:760px">
-              <h1>Muse</h1>
-              <div class="tagline"><b>Less swiping. More real dates.</b></div>
-              <div class="tagline">
-                A curated dating network built around real communities — starting with alumni density in NYC and the Bay Area.
-              </div>
-
-              <div class="kpiRow">
-                <div class="kpi"><b>North star:</b> match → date conversion</div>
-                <div class="kpi"><b>Behavior design:</b> focus & follow-through</div>
-                <div class="kpi"><b>Trust:</b> private signals, no public scores</div>
-              </div>
-
-              <div class="subtag">
-                Built for high-intent people who want a real plan, not infinite chatting.
-              </div>
-            </div>
-
-            <div class="cta" id="waitlist">
-              <a class="btn" href="https://forms.gle/52S9GsuRD9eVHtE88" target="_blank" rel="noopener">
-                Join the waitlist →
-              </a>
-              <a class="btnGhost" href="#how">How it works</a>
-              <div class="note">
-                Early access is limited. We’ll only email you for early access and curated event invites. No spam.
-              </div>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-        </div>
-
-        <div class="content">
-
-          <div class="sectionTitle">
-            <h2>The problem</h2>
-            <span>Why dating apps feel exhausting</span>
-          </div>
-          <div class="story">
-            <p>
-              Most dating apps optimize for <b>screen time</b>: more swipes, more chats, more noise.
-              But people don’t want more messages. They want <b>one good person</b> and a real plan.
-            </p>
-            <div class="quote">“I have matches… and zero plans this weekend.”</div>
-            <p class="mini">
-              Muse is built for the opposite outcome: fewer matches, higher intent, and faster real-life connection.
-            </p>
-          </div>
-
-          <div class="sectionTitle" style="margin-top:26px;">
-            <h2>What makes Muse different</h2>
-            <span>Mechanisms, not vibes</span>
-          </div>
-
-          <div class="grid3">
-            <div class="pill">
-              <b>1–3 curated matches/day</b>
-              <p>High signal, low noise. You spend less time browsing and more time meeting.</p>
-            </div>
-            <div class="pill">
-              <b>Max 3 active chats</b>
-              <p>Focus creates follow-through. Less ghosting. More plans. Better outcomes.</p>
-            </div>
-            <div class="pill">
-              <b>Events → same-room matching</b>
-              <p>Community events turn cold starts into warm starts and raise trust immediately.</p>
-            </div>
-          </div>
-
-          <div class="badgeRow">
-            <div class="badge"><span class="dot"></span>Private trust signals (no public scores)</div>
-            <div class="badge"><span class="dot"></span>Anonymous post-date feedback (opt-in)</div>
-            <div class="badge"><span class="dot"></span>Quality filters (alumni + lifestyle + values)</div>
-            <div class="badge"><span class="dot"></span>Anti-toxicity: protect good users</div>
-          </div>
-
-          <div class="sectionTitle" id="how">
-            <h2>How it works</h2>
-            <span>Simple flow, strong incentives</span>
-          </div>
-
-          <div class="two">
-            <div class="box">
-              <h3>Core flow</h3>
-              <ol class="tight">
-                <li><b>Verify</b> alumni/community and set preference weights.</li>
-                <li>Get <b>1–3 curated matches</b> per day — no endless feed.</li>
-                <li>Chat with a <b>3-active-chat cap</b> to stay focused.</li>
-                <li>After a chat/date, do a <b>10-second reflection</b> (private).</li>
-                <li>Muse learns what “works” and improves matches over time.</li>
-              </ol>
-              <div class="mini">Designed to optimize for dates, not dopamine.</div>
-            </div>
-
-            <div class="box">
-              <h3>Trust & safety (private)</h3>
-              <ul class="tight">
-                <li><b>Private trust signals</b>, not public rankings.</li>
-                <li><b>Anonymous feedback</b> after interactions (opt-in).</li>
-                <li><b>No “score culture”</b>: we never show public ratings.</li>
-                <li><b>Quiet protection</b>: no-shows and bad behavior get down-ranked.</li>
-              </ul>
-              <div class="mini">Goal: a calm, high-quality community — especially in alumni networks.</div>
-            </div>
-          </div>
-
-          <div class="sectionTitle" id="preview">
-            <h2>Product preview</h2>
-            <span>Optional: upload muse_montage.png</span>
-          </div>
-
-          <div class="imgWrap">
-            <img src="muse_montage.png" alt="Muse product preview"
-                 onerror="this.style.display='none'; this.parentElement.style.display='none';" />
-          </div>
-
-          <div class="sectionTitle">
-            <h2>Market & go-to-market</h2>
-            <span>Start narrow, scale city by city</span>
-          </div>
-
-          <div class="grid2">
-            <div class="pill">
-              <b>Wedge: alumni density</b>
-              <p>
-                NYC + Bay Area have high concentration of alumni communities and high dating intent.
-                Muse starts with warm networks, then expands city by city.
-              </p>
-            </div>
-            <div class="pill">
-              <b>Community-first growth</b>
-              <p>
-                Curated events create instant trust and lower acquisition cost.
-                Post-event matching boosts conversion because people already shared context.
-              </p>
-            </div>
-          </div>
-
-          <div class="badgeRow">
-            <div class="badge"><span class="dot"></span><b>Acquisition:</b>&nbsp;alumni groups + event partners</div>
-            <div class="badge"><span class="dot"></span><b>Activation:</b>&nbsp;first chat within 24h</div>
-            <div class="badge"><span class="dot"></span><b>Outcome:</b>&nbsp;date scheduled within 7 days</div>
-          </div>
-
-          <div class="sectionTitle">
-            <h2>Business model</h2>
-            <span>Aligned incentives</span>
-          </div>
-
-          <div class="grid2">
-            <div class="pill">
-              <b>Muse+ subscription</b>
-              <p>Premium curation, advanced filters, and priority access to high-quality events.</p>
-            </div>
-            <div class="pill">
-              <b>Curated events</b>
-              <p>Ticketed events for alumni communities (and later, partner communities). Real people, real outcomes.</p>
-            </div>
-          </div>
-
-          <div class="sectionTitle" id="pilot">
-            <h2>Pilot plan + evidence</h2>
-            <span>What judges can verify (no fake numbers)</span>
-          </div>
-
-          <div class="callout">
-            <p>
-              <b>Instead of vanity metrics</b>, Muse focuses on one outcome: <b>match → date conversion</b>.
-              Our pilot is designed so judges can quickly verify demand with real artifacts:
-              waitlist entries, event RSVPs, and post-event matching outcomes.
-            </p>
-
-            <div class="steps">
-              <div class="step">
-                <div class="n">Milestone 1</div>
-                <div class="t">Waitlist + intent tags</div>
-                <div class="d">Collect alumni city + intent (NYC/Bay) and preferred event types.</div>
-              </div>
-              <div class="step">
-                <div class="n">Milestone 2</div>
-                <div class="t">Two micro-events</div>
-                <div class="d">Small, curated meetups (10–20 people) with warm community hosts.</div>
-              </div>
-              <div class="step">
-                <div class="n">Milestone 3</div>
-                <div class="t">Post-event matching</div>
-                <div class="d">Same-room context → follow-up matches → measure date scheduling within 7 days.</div>
-              </div>
-            </div>
-
-            <div class="mini">
-              <b>Evidence we can share:</b> screenshots of waitlist responses (redacted),
-              event RSVP lists (redacted), and a simple funnel summary:
-              RSVPs → attendance → matches → dates scheduled.
-            </div>
-          </div>
-
-          <div class="sectionTitle">
-            <h2>Who Muse is for</h2>
-            <span>High-intent users (not casual swiping)</span>
-          </div>
-
-          <div class="grid3">
-            <div class="pill">
-              <b>The “busy but serious”</b>
-              <p>Wants fewer chats, better fit, and faster real-life meetups.</p>
-            </div>
-            <div class="pill">
-              <b>The “community member”</b>
-              <p>Feels safer and more authentic when there’s shared context.</p>
-            </div>
-            <div class="pill">
-              <b>The “quality-first”</b>
-              <p>Prefers thoughtful filters and private trust signals over public ratings.</p>
-            </div>
-          </div>
-
-          <div class="sectionTitle">
-            <h2>FAQ</h2>
-            <span>Common questions</span>
-          </div>
-
-          <div class="box">
-            <p style="margin:0; color:var(--muted); font-size:14.5px;">
-              <b style="color:var(--text)">Is Muse only for CMU?</b><br/>
-              CMU is our starting community. The model expands to other alumni networks and cities once conversion is proven.<br/><br/>
-              <b style="color:var(--text)">Why not show public ratings?</b><br/>
-              Public scores create anxiety, gaming, and unfair stigma. Muse keeps signals private to protect the community.<br/><br/>
-              <b style="color:var(--text)">What do you mean by “reflection”?</b><br/>
-              A 10-second private check-in after a chat/date to improve matching and surface safety signals.<br/><br/>
-              <b style="color:var(--text)">What are you optimizing for?</b><br/>
-              Match → date conversion. A “good” week is fewer chats and more real plans.
-            </p>
-          </div>
-
-          <div class="sectionTitle" style="margin-top:26px;">
-            <h2>Ready to try Muse?</h2>
-            <span>Join early access</span>
-          </div>
-
-          <div class="top" style="margin-top:8px;">
-            <div style="max-width:760px">
-              <div class="tagline">
-                We’re building a calmer, higher-trust dating culture: less noise, more real dates.
-              </div>
-              <div class="mini">Join the waitlist to get early access + NYC/Bay event invites.</div>
-            </div>
-            <div class="cta">
-              <a class="btn" href="https://forms.gle/52S9GsuRD9eVHtE88" target="_blank" rel="noopener">
-                Join the waitlist →
-              </a>
-              <div class="note">You’ll get a short email when early access opens. No spam.</div>
-            </div>
-          </div>
-
-          <footer>
-            <div>© Muse • NYC + Bay Area</div>
-            <div>Contact: waitlist via form</div>
-          </footer>
-
-        </div>
-      </section>
+      <div class="box" style="margin-top:14px;">
+        <h4>Business model</h4>
+        <ul>
+          <li><b>Muse+ subscription</b> ($19–39/mo): premium curation, advanced filters, event priority.</li>
+          <li><b>Curated events</b> ($15–65/ticket): small, high-intent meetups for alumni (later partner communities).</li>
+        </ul>
+      </div>
     </div>
-  </main>
+
+    <div class="section">
+      <div class="sectionTitle">
+        <h2>FAQ</h2>
+        <span>Common questions</span>
+      </div>
+      <div class="box">
+        <p style="margin:0 0 8px; font-weight:700;">Is Muse only for CMU?</p>
+        <p style="margin:0 0 14px; color:var(--muted);">CMU is our starting community. We expand to other alumni networks and cities once conversion is proven.</p>
+
+        <p style="margin:0 0 8px; font-weight:700;">Do you show public ratings?</p>
+        <p style="margin:0 0 14px; color:var(--muted);">No. Trust signals are private to protect the community and avoid “score culture.”</p>
+
+        <p style="margin:0 0 8px; font-weight:700;">What are you optimizing for?</p>
+        <p style="margin:0; color:var(--muted);">Match → date conversion. A “good week” is fewer chats and more real plans.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">
+        <h2>Ready to try Muse?</h2>
+        <span>Join early access</span>
+      </div>
+      <div class="ctaRow">
+        <a class="btn primary" href="https://forms.gle/52S9GsuRD9eVHtE88" target="_blank" rel="noopener">Join the waitlist →</a>
+      </div>
+      <div class="note">You’ll get a short email when early access opens. No spam.</div>
+    </div>
+
+    <div class="footer">
+      <div>© Muse • NYC + Bay Area</div>
+      <div>Contact: waitlist via form</div>
+    </div>
+  </div>
 </body>
 </html>
